@@ -12,6 +12,7 @@ public class DoublyLinkedList {
     private Node head;
     private Node tail;
 
+
     private Node historyHead; // Head of the history queue
     private Node historyTail; // Tail of the history queue
 
