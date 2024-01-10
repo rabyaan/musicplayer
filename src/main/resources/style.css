@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url("./fonts/Poppins-Regular.otf");
+    /*font-weight: 300;*/
+}
+* {
+    -fx-font-family: 'Poppins';
+}
+#songListView, #historyListView{
+    -fx-background-color: #121212;
+    -fx-font-family: 'Poppins';
+    -fx-control-inner-background: #121212;
+    -fx-control-inner-background-alt: #121212;
+    -fx-selection-bar: #1db954;
+    -fx-selection-bar-non-focused: #1db954;
+    -fx-cell-hover-color: derive(-fx-selection-bar, 20%);
+    -fx-cell-focus-inner-border: #1db954;
+    -fx-cell-focus-inner-border-alt: #1db954;
+    -fx-focus-color: #1db954;
+}
+.tab-pane .tab-header-background {
+    -fx-background-color:  #212121FF;
+}
+
+.tab {
+    -fx-background-color: #4dbd6f; /* Non-selected tab color */
+}
+
+/* Change the background color of the selected Tab */
+.tab:selected {
+    -fx-background-color: #1db954; /* Selected tab color */
+    -fx-focus-color: #1db954;
+}
+/* Change the text color of the Tabs */
+.tab-label {
+    -fx-text-fill: white;
+}

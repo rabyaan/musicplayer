@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane style="-fx-background-color: #121212;" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplemusicplayerv2.MainController">
+    <children>
+        <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="675.0" tabMaxWidth="100.0" tabMinHeight="25.0" tabMinWidth="110.0">
+            <tabs>
+                <Tab closable="false" text="All Songs">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="songListView" onMouseClicked="#handleSongClick" prefHeight="258.0" prefWidth="675.0" style="-fx-background-color: #121212;" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab closable="false" onSelectionChanged="#handleRefreshButton" text="History">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="historyListView" layoutY="42.0" prefHeight="214.0" prefWidth="675.0" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0" />
+                                <HBox alignment="CENTER_RIGHT" layoutX="1.0" layoutY="-1.0" prefHeight="43.0" prefWidth="675.0" spacing="10.0">
+                                    <children>
+                                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleHistoryDelete" style="-fx-background-color: #1db954;" text="Delete" textFill="WHITE" />
+<!--                                        <Button mnemonicParsing="false" onAction="#handleRefreshButton" style="-fx-background-color: #1db954;" text="Refresh" textFill="WHITE" />-->
+                                    </children>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets right="10.0" />
+                                    </padding>
+                                </HBox>
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </TabPane>
+      <VBox layoutY="342.0" prefHeight="112.0" prefWidth="675.0" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="18.0" prefWidth="675.0" style="-fx-background-color: #212121FF;">
+               <children>
+                  <Label fx:id="songPlaying" alignment="CENTER" prefHeight="73.0" prefWidth="675.0" text="No song playing!" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Separator layoutY="69.0" prefHeight="4.0" prefWidth="675.0" />
+               </children>
+            </AnchorPane>
+              <HBox alignment="CENTER" depthTest="DISABLE" prefHeight="58.0" prefWidth="675.0" spacing="15.0" style="-fx-border-clor: white;">
+                  <children>
+                      <Button fx:id="prevButton" onAction="#handlePrevButton" style="-fx-background-color: #1db954;" text="Previous" textFill="WHITE" />
+                      <Button fx:id="playButton" onAction="#handlePlayButton" style="-fx-background-color: #1db954;" text="Play" textFill="WHITE" />
+                      <Button fx:id="nextButton" onAction="#handleNextButton" style="-fx-background-color: #1db954;" text="Next" textFill="WHITE" />
+                      <Button fx:id="pauseButton" onAction="#handlePauseButton" style="-fx-background-color: #1db954;" text="Pause" textFill="WHITE" />
+<!--                      <Button fx:id="shuffleButton" onAction="#handleShuffleButton" style="-fx-background-color: #1db954;" text="Shuffle" textFill="WHITE" />-->
+                      <ToggleButton fx:id="toggleShuffleButton" onAction="#handleToggleShuffleButton" style="-fx-background-color: #1db954;" textFill="WHITE" text="Shuffle: OFF" />
+
+                      <!--                <Button fx:id="historyButton" onAction="#handleHistory" text="History" />-->
+
+                  </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+              </HBox>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>
